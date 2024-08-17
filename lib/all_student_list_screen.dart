@@ -20,12 +20,16 @@ class _AllStudentListScreenState extends State<AllStudentListScreen> {
         title: const Text("Student List"),
       ),
       body: ListView.builder(
-        itemCount: students.length, // Set itemCount to the length of the student list
+        itemCount: students.length,
         itemBuilder: (context, index) {
-          final student = students[index]; // Get the student at the current index
-          return ListTile(
-            title: Text("${student.name}"), // Display the student's name
-            subtitle: Text("${student.uid}"), // Optionally, you can display the UID
+          final student = students[index];
+          return Card(
+            elevation: 5 ,
+            shadowColor: Colors.orange,
+            child: ListTile(
+              title: Text(student.name , style: const TextStyle(fontSize: 25 , color: Colors.orange , fontWeight: FontWeight.bold),), // Display the student's name
+              subtitle: Text(student.uid , style: const TextStyle(fontSize: 23 , color: Colors.black),), // Optionally, you can display the UID
+            ),
           );
         },
       ),
